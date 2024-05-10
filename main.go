@@ -14,6 +14,8 @@ var (
 
 func main() {
 	// Initialize MongoDB connection and set the db variable
+	gin.SetMode(gin.ReleaseMode)
+
 	database.ConnectDB()
 	db = database.GetDB()
 
