@@ -71,7 +71,7 @@ func LoginHandler(c *gin.Context, db *mongo.Database) {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to generate token"})
 		return
 	}
-	c.SetCookie("Authorization", token, 3600, "/", "", false, true)
+	c.SetCookie("Authorization", token, 3600, "/", "", false, false)
 
 	c.JSON(http.StatusOK, gin.H{"token": token})
 }
